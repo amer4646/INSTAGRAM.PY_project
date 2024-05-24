@@ -1,0 +1,37 @@
+CODE EXPLANATION:-
+
+
+Login:
+bot.login(user=username, passwd=password)
+
+
+Profile Information Extraction:
+profile = instaloader.Profile.from_username(bot.context, username)
+print("Username: ", profile.username)
+print("User ID: ", profile.userid)
+print("Number of Posts: ", profile.mediacount)
+print("Followers: ", profile.followers)
+print("Followees: ", profile.followees)
+print("Bio: ", profile.biography, profile.external_url)
+
+
+Followers and Followees Retrieval:
+followers = [follower.username for follower in profile.get_followers()]
+print("Followers:", followers)
+followees = [followee.username for followee in profile.get_followees()]
+print("Followees:", followees)
+
+
+Posts Download:
+target_profile = instaloader.Profile.from_username(bot.context, target_username)
+posts = target_profile.get_posts()
+for index, post in enumerate(posts, 1):
+    bot.download_post(post, target=f"{target_profile.username}_{index}")
+
+
+Image Filtering:
+from instafilter import Instafilter
+model = Instafilter("Lo-fi")
+new_image = model("image.jpg")
+import cv2
+cv2.imwrite("modified_image.jpg", new_image)
