@@ -1,0 +1,39 @@
+Sample Output-
+Here is a sample of what the output might look like when the script runs successfully, with placeholder data:
+
+
+<class 'instaloader.structures.Profile'>
+Username: your_username
+User ID: 1234567890
+Number of Posts: 150
+Followers: 200
+Followees: 180
+Bio: Your bio here http://example.com
+
+Followers: ['follower1', 'follower2', 'follower3', ..., 'follower200']
+Followees: ['followee1', 'followee2', 'followee3', ..., 'followee180']
+
+Downloading posts from another profile...
+Downloading: other_username_1
+Downloading: other_username_2
+...
+Downloading: other_username_N
+
+Image filtering completed successfully, saved as modified_image.jpg.
+
+
+#######
+
+Error Handling Outputs
+In case of errors, the outputs might look like these:
+
+Login failed: Invalid credentials
+
+Failed to load profile: Profile not found
+
+Failed to get followers: Network error
+Failed to get followees: Network error
+
+Failed to download posts: Access denied
+
+Failed to filter image: instafilter module not found
